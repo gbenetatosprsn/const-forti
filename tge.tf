@@ -39,7 +39,7 @@ resource "aws_ec2_transit_gateway_route_table" "inboundvpc" {
 
 
 resource "aws_ec2_transit_gateway_route_table_association" "associate_vpc" {
-  depends_on                                    = [aws_ec2_transit_gateway.main_tgw,aws_ec2_transit_gateway_route_table.inboundvpn]
+  depends_on                                    = [aws_ec2_transit_gateway.main_tgw,aws_ec2_transit_gateway_route_table.inboundvpc]
   transit_gateway_attachment_id                 = aws_ec2_transit_gateway_vpc_attachment.tgw-main.id
-  transit_gateway_route_table_id                = aws_ec2_transit_gateway_route_table.inboundvpn.id
+  transit_gateway_route_table_id                = aws_ec2_transit_gateway_route_table.inboundvpc.id
 }
