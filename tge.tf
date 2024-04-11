@@ -14,7 +14,7 @@ resource "aws_ec2_transit_gateway" "main_tgw" {
 
 resource "aws_ec2_transit_gateway_vpc_attachment" "tgw-main" {
   depends_on                                            = [aws_ec2_transit_gateway.main_tgw]
-  subnet_ids                                            = [aws_subnet.tgwaz1,aws_subnet.tgwaz2]
+  subnet_ids                                            = [aws_subnet.tgwaz1.id,aws_subnet.tgwaz2.id]
   transit_gateway_id                                    = aws_ec2_transit_gateway.main_tgw.id
   transit_gateway_default_route_table_association       = false
   transit_gateway_default_route_table_propagation       = false
