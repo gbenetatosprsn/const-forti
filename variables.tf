@@ -71,7 +71,7 @@ variable "hamgmtcidraz2" {
 
 // Provide the license type for FortiGate-VM Instances, either byol or payg.
 variable "license_type" {
-  default = "byol"
+  default = "payg"
 }
 
 variable "arch" {
